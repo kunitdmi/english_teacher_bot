@@ -157,13 +157,19 @@ sudo systemctl stop english-teacher-bot
 ```bash
 cd ~/claude-tg-bot
 
+rm -rf .git
+
 # Инициализация репо (уже есть .gitignore)
-git init
-git add english_teacher_bot.py english_teacher_bot.env.example .gitignore README.md
-git commit -m "Initial commit: English Teacher Telegram Bot"
+git init -b master
 
 # Создайте репо на github.com, затем:
-git remote add origin git@github.com:YOUR_USER/claude-tg-bot.git
+git remote add origin https://github.com/kunitdmi/english_teacher_bot
+# или
+git remote add origin git@github.com:kunitdmi/english_teacher_bot.git
+
+# далее
+git add .
+git commit -m "Initial commit: English Teacher Telegram Bot"
 git push -u origin main
 ```
 
@@ -177,7 +183,7 @@ sudo apt update && sudo apt install gh
 
 # Авторизация и создание
 gh auth login
-gh repo create claude-tg-bot --public --source=. --push
+gh repo create english_teacher_bot --public --source=. --push
 ```
 
 ## Структура проекта
